@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.smartcampus.controller.CourseController"
+            prefWidth="900" prefHeight="650" styleClass="course-root">
+    <top>
+        <Label text="Course Management" styleClass="view-title"/>
+    </top>
+    <center>
+        <VBox spacing="16">
+            <padding>
+                <Insets top="16" right="24" bottom="24" left="24"/>
+            </padding>
+            <HBox spacing="12" alignment="CENTER_LEFT">
+                <Region HBox.hgrow="ALWAYS"/>
+                <Button fx:id="addCourseBtn" text="Add Course" onAction="#showAddCourse" styleClass="primary-button"/>
+            </HBox>
+            <TableView fx:id="courseTable" prefHeight="350" styleClass="data-table">
+                <columns>
+                    <TableColumn fx:id="colCourseId" text="ID" prefWidth="60"/>
+                    <TableColumn fx:id="colTitle" text="Title" prefWidth="280"/>
+                    <TableColumn fx:id="colTeacher" text="Teacher" prefWidth="220"/>
+                    <TableColumn fx:id="colEnrolled" text="Enrolled" prefWidth="80"/>
+                    <TableColumn fx:id="colCourseActions" text="Actions" prefWidth="180"/>
+                </columns>
+            </TableView>
+            <HBox spacing="12" alignment="CENTER_LEFT">
+                <Button fx:id="editCourseBtn" text="Edit" onAction="#editSelected" disable="true"/>
+                <Button fx:id="deleteCourseBtn" text="Delete" onAction="#deleteSelected" disable="true"/>
+                <Button fx:id="enrollBtn" text="Enroll Students" onAction="#showEnrollDialog" disable="true"/>
+                <Button fx:id="gradesBtn" text="Manage Grades" onAction="#showGradesDialog" disable="true"/>
+            </HBox>
+        </VBox>
+    </center>
+</BorderPane>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.smartcampus.controller.DashboardController"
+            prefWidth="900" prefHeight="650" styleClass="dashboard-root">
+    <top>
+        <Label text="Dashboard" styleClass="view-title"/>
+    </top>
+    <center>
+        <ScrollPane fitToWidth="true" styleClass="dashboard-scroll">
+            <VBox spacing="24" styleClass="dashboard-content">
+                <padding>
+                    <Insets top="16" right="24" bottom="24" left="24"/>
+                </padding>
+                <Label text="Statistics" styleClass="section-label"/>
+                <HBox spacing="20" alignment="CENTER_LEFT">
+                    <VBox fx:id="statStudents" styleClass="stat-card" prefWidth="180">
+                        <Label fx:id="statStudentsLabel" styleClass="stat-value"/>
+                        <Label text="Total Students" styleClass="stat-caption"/>
+                    </VBox>
+                    <VBox fx:id="statCourses" styleClass="stat-card" prefWidth="180">
+                        <Label fx:id="statCoursesLabel" styleClass="stat-value"/>
+                        <Label text="Total Courses" styleClass="stat-caption"/>
+                    </VBox>
+                    <VBox fx:id="statGrades" styleClass="stat-card" prefWidth="180">
+                        <Label fx:id="statGradesLabel" styleClass="stat-value"/>
+                        <Label text="Grades Recorded" styleClass="stat-caption"/>
+                    </VBox>
+                    <VBox fx:id="statAverage" styleClass="stat-card" prefWidth="180">
+                        <Label fx:id="statAverageLabel" styleClass="stat-value"/>
+                        <Label text="Overall Average" styleClass="stat-caption"/>
+                    </VBox>
+                </HBox>
+                <Separator/>
+                <Label text="Quick Actions" styleClass="section-label"/>
+                <HBox spacing="12">
+                    <Button text="Manage Students" onAction="#goToStudents" styleClass="action-button"/>
+                    <Button text="Manage Courses" onAction="#goToCourses" styleClass="action-button"/>
+                </HBox>
+            </VBox>
+        </ScrollPane>
+    </center>
+</BorderPane>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.smartcampus.controller.LoginController"
+            prefWidth="420" prefHeight="380" styleClass="login-root">
+    <center>
+        <VBox alignment="CENTER" spacing="24" styleClass="login-box">
+            <padding>
+                <Insets top="40" right="40" bottom="40" left="40"/>
+            </padding>
+            <Label text="Smart Campus" styleClass="login-title"/>
+            <Label text="Management System" styleClass="login-subtitle"/>
+            <Separator/>
+            <Label text="Admin Login" styleClass="section-label"/>
+            <TextField fx:id="usernameField" promptText="Username" maxWidth="Infinity" prefHeight="36"/>
+            <PasswordField fx:id="passwordField" promptText="Password" maxWidth="Infinity" prefHeight="36"/>
+            <Label fx:id="errorLabel" styleClass="error-label" visible="false" managed="false"/>
+            <Button fx:id="loginButton" text="Sign In" onAction="#handleLogin" maxWidth="Infinity" prefHeight="40"
+                    defaultButton="true"/>
+        </VBox>
+    </center>
+</BorderPane>

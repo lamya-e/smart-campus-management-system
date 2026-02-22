@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.smartcampus.controller.StudentController"
+            prefWidth="900" prefHeight="650" styleClass="student-root">
+    <top>
+        <Label text="Student Management" styleClass="view-title"/>
+    </top>
+    <center>
+        <VBox spacing="16">
+            <padding>
+                <Insets top="16" right="24" bottom="24" left="24"/>
+            </padding>
+            <HBox spacing="12" alignment="CENTER_LEFT">
+                <TextField fx:id="searchField" promptText="Search by name or email..." prefWidth="280" prefHeight="32"/>
+                <Button text="Search" onAction="#searchStudents"/>
+                <Region HBox.hgrow="ALWAYS"/>
+                <Button fx:id="addStudentBtn" text="Add Student" onAction="#showAddStudent" styleClass="primary-button"/>
+            </HBox>
+            <TableView fx:id="studentTable" prefHeight="400" styleClass="data-table">
+                <columns>
+                    <TableColumn fx:id="colId" text="ID" prefWidth="60"/>
+                    <TableColumn fx:id="colName" text="Name" prefWidth="180"/>
+                    <TableColumn fx:id="colEmail" text="Email" prefWidth="220"/>
+                    <TableColumn fx:id="colMajor" text="Major" prefWidth="180"/>
+                    <TableColumn fx:id="colActions" text="Actions" prefWidth="180"/>
+                </columns>
+            </TableView>
+            <HBox spacing="12" alignment="CENTER_LEFT">
+                <Button fx:id="editStudentBtn" text="Edit" onAction="#editSelected" disable="true"/>
+                <Button fx:id="deleteStudentBtn" text="Delete" onAction="#deleteSelected" disable="true"/>
+                <Button text="View Grades" onAction="#viewGrades" disable="true" fx:id="viewGradesBtn"/>
+            </HBox>
+        </VBox>
+    </center>
+</BorderPane>
