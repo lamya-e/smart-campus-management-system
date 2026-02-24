@@ -1,0 +1,11 @@
+# Copy this file to config.properties and fill in your Supabase credentials.
+# Do NOT commit config.properties or .env with real credentials.
+
+# Supabase: Project Settings -> Database -> Connection string (URI)
+# Use "Transaction" mode for direct JDBC, e.g.:
+#   jdbc:postgresql://db.xxxxxxxxxxxx.supabase.co:5432/postgres
+database.url=jdbc:postgresql://YOUR_PROJECT_REF.supabase.co:5432/postgres
+
+# Database user (e.g. postgres) and password from Supabase Dashboard
+database.username=postgres
+database.password=your_password

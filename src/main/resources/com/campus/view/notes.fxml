@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.campus.controller.NoteController"
+            stylesheets="@../css/app.css">
+    <left>
+        <VBox spacing="8" styleClass="sidebar" prefWidth="220">
+            <padding>
+                <Insets top="24" right="16" bottom="24" left="16"/>
+            </padding>
+            <Label text="🎓 Smart Campus" styleClass="sidebar-title"/>
+            <Separator/>
+            <Button text="🏠  Dashboard"    onAction="#navDashboard"   styleClass="nav-button" maxWidth="Infinity"/>
+            <Button text="👨‍🎓  Étudiants"    onAction="#navEtudiants"   styleClass="nav-button" maxWidth="Infinity"/>
+            <Button text="👨‍🏫  Professeurs"  onAction="#navProfesseurs" styleClass="nav-button" maxWidth="Infinity"/>
+            <Button text="📚  Modules"      onAction="#navModules"     styleClass="nav-button" maxWidth="Infinity"/>
+            <Button text="📝  Notes"        onAction="#navNotes"       styleClass="nav-button" maxWidth="Infinity"/>
+            <Region VBox.vgrow="ALWAYS"/>
+        </VBox>
+    </left>
+    <center>
+        <VBox spacing="16" styleClass="content-pane">
+            <padding>
+                <Insets top="32" right="32" bottom="32" left="32"/>
+            </padding>
+            <HBox spacing="12" alignment="CENTER_LEFT">
+                <Label text="📝 Bulletin de Notes" styleClass="view-title"/>
+                <Region HBox.hgrow="ALWAYS"/>
+                <Label text="Étudiant :" styleClass="section-label"/>
+                <ComboBox fx:id="etudiantCombo" prefWidth="240"/>
+                <Button text="➕  Ajouter"   onAction="#addNote"    styleClass="primary-button"/>
+                <Button text="✏️  Modifier"  onAction="#editNote"   styleClass="action-button"/>
+                <Button text="🗑️  Supprimer" onAction="#deleteNote" styleClass="danger-button"/>
+            </HBox>
+            <TableView fx:id="notesTable" VBox.vgrow="ALWAYS" styleClass="data-table">
+                <columns>
+                    <TableColumn fx:id="moduleColumn"     text="Module"     prefWidth="180"/>
+                    <TableColumn fx:id="normaleColumn"    text="Normale /20" prefWidth="120"/>
+                    <TableColumn fx:id="rattrapageColumn" text="Rattrapage /20" prefWidth="130"/>
+                    <TableColumn fx:id="statutColumn"     text="Statut"     prefWidth="130"/>
+                </columns>
+            </TableView>
+            <!-- Moyenne & Mention -->
+            <HBox spacing="24" alignment="CENTER_LEFT" styleClass="stat-card">
+                <padding>
+                    <Insets top="12" right="20" bottom="12" left="20"/>
+                </padding>
+                <Label text="Moyenne générale :" styleClass="stat-caption"/>
+                <Label fx:id="moyenneLabel" text="—" styleClass="stat-value"/>
+                <Label text="Mention :" styleClass="stat-caption"/>
+                <Label fx:id="mentionLabel" text="—" styleClass="stat-value"/>
+            </HBox>
+        </VBox>
+    </center>
+</BorderPane>

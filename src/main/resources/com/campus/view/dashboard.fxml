@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.campus.controller.DashboardController"
+            stylesheets="@../css/app.css">
+    <left>
+        <VBox spacing="8" styleClass="sidebar" prefWidth="220">
+            <padding>
+                <Insets top="24" right="16" bottom="24" left="16"/>
+            </padding>
+            <Label text="🎓 Smart Campus" styleClass="sidebar-title"/>
+            <Separator/>
+            <Button text="🏠  Dashboard"    onAction="#navDashboard"   styleClass="nav-button" maxWidth="Infinity"/>
+            <Button text="👨‍🎓  Étudiants"    onAction="#navEtudiants"   styleClass="nav-button" maxWidth="Infinity"/>
+            <Button text="👨‍🏫  Professeurs"  onAction="#navProfesseurs" styleClass="nav-button" maxWidth="Infinity"/>
+            <Button text="📚  Modules"      onAction="#navModules"     styleClass="nav-button" maxWidth="Infinity"/>
+            <Button text="📝  Notes"        onAction="#navNotes"       styleClass="nav-button" maxWidth="Infinity"/>
+            <Region VBox.vgrow="ALWAYS"/>
+        </VBox>
+    </left>
+    <center>
+        <VBox spacing="24" styleClass="content-pane">
+            <padding>
+                <Insets top="32" right="32" bottom="32" left="32"/>
+            </padding>
+            <Label text="Tableau de Bord" styleClass="view-title"/>
+            <HBox spacing="20">
+                <!-- Card Étudiants -->
+                <VBox styleClass="stat-card" spacing="8" HBox.hgrow="ALWAYS">
+                    <Label text="👨‍🎓 Étudiants" styleClass="stat-caption"/>
+                    <Label fx:id="totalEtudiantsLabel" text="0" styleClass="stat-value"/>
+                </VBox>
+                <!-- Card Professeurs -->
+                <VBox styleClass="stat-card-green" spacing="8" HBox.hgrow="ALWAYS">
+                    <Label text="👨‍🏫 Professeurs" styleClass="stat-caption"/>
+                    <Label fx:id="totalProfesseursLabel" text="0" styleClass="stat-value"/>
+                </VBox>
+                <!-- Card Modules -->
+                <VBox styleClass="stat-card-orange" spacing="8" HBox.hgrow="ALWAYS">
+                    <Label text="📚 Modules" styleClass="stat-caption"/>
+                    <Label fx:id="totalModulesLabel" text="0" styleClass="stat-value"/>
+                </VBox>
+            </HBox>
+        </VBox>
+    </center>
+</BorderPane>

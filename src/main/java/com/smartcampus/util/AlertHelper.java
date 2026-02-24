@@ -58,7 +58,7 @@ public final class AlertHelper {
         Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();
         try {
             stage.getScene().getStylesheets().add(
-                AlertHelper.class.getResource("/styles/app.css").toExternalForm());
+                AlertHelper.class.getResource("/com/campus/css/app.css").toExternalForm());
         } catch (Exception ignored) {
         }
     }

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.campus.controller.ProfesseurController"
+            stylesheets="@../css/app.css">
+    <left>
+        <VBox spacing="8" styleClass="sidebar" prefWidth="220">
+            <padding>
+                <Insets top="24" right="16" bottom="24" left="16"/>
+            </padding>
+            <Label text="🎓 Smart Campus" styleClass="sidebar-title"/>
+            <Separator/>
+            <Button text="🏠  Dashboard"    onAction="#navDashboard"   styleClass="nav-button" maxWidth="Infinity"/>
+            <Button text="👨‍🎓  Étudiants"    onAction="#navEtudiants"   styleClass="nav-button" maxWidth="Infinity"/>
+            <Button text="👨‍🏫  Professeurs"  onAction="#navProfesseurs" styleClass="nav-button" maxWidth="Infinity"/>
+            <Button text="📚  Modules"      onAction="#navModules"     styleClass="nav-button" maxWidth="Infinity"/>
+            <Button text="📝  Notes"        onAction="#navNotes"       styleClass="nav-button" maxWidth="Infinity"/>
+            <Region VBox.vgrow="ALWAYS"/>
+        </VBox>
+    </left>
+    <center>
+        <VBox spacing="16" styleClass="content-pane">
+            <padding>
+                <Insets top="32" right="32" bottom="32" left="32"/>
+            </padding>
+            <HBox alignment="CENTER_LEFT" spacing="12">
+                <Label text="👨‍🏫 Professeurs" styleClass="view-title"/>
+                <Region HBox.hgrow="ALWAYS"/>
+                <Button text="➕  Ajouter"   onAction="#addProfesseur"    styleClass="primary-button"/>
+                <Button text="✏️  Modifier"  onAction="#editProfesseur"   styleClass="action-button"/>
+                <Button text="🗑️  Supprimer" onAction="#deleteProfesseur" styleClass="danger-button"/>
+            </HBox>
+            <TableView fx:id="professeursTable" VBox.vgrow="ALWAYS" styleClass="data-table">
+                <columns>
+                    <TableColumn fx:id="codeColumn"      text="Code"       prefWidth="110"/>
+                    <TableColumn fx:id="nomColumn"       text="Nom"        prefWidth="150"/>
+                    <TableColumn fx:id="prenomColumn"    text="Prénom"     prefWidth="150"/>
+                    <TableColumn fx:id="specialiteColumn" text="Spécialité" prefWidth="170"/>
+                    <TableColumn fx:id="emailColumn"     text="Email"      prefWidth="210"/>
+                </columns>
+            </TableView>
+        </VBox>
+    </center>
+</BorderPane>

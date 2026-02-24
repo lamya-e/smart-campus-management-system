@@ -1,6 +1,6 @@
 # Smart Campus Management System
 
-A professional JavaFX desktop application for university management, built with **MVC architecture**, **SQLite** persistence, and a modern UI with optional dark/light theme.
+A professional JavaFX desktop application for university management, built with **MVC architecture**, **Supabase (PostgreSQL)** persistence, and a modern UI with optional dark/light theme.
 
 ## Features
 
@@ -61,15 +61,20 @@ src/main/java/com/smartcampus/
 │   ├── CourseService.java
 │   └── GradeService.java
 └── util/
-    ├── DBConnection.java        # SQLite singleton, schema
+    ├── ConfigLoader.java        # Loads DB config from config.properties / .env
+    ├── DBConnection.java        # Supabase/PostgreSQL connection singleton
     └── AlertHelper.java         # Alerts and dialogs
 ```
 
-## Data
+## Database (Supabase / PostgreSQL)
 
-- **Database**: SQLite file `smart_campus.db` created in the current working directory on first run.
-- **Default login**: username `admin`, password `admin` (change in production).
-- One seed teacher is created for demo: "Dr. Jane Smith", Computer Science.
+1. **Create tables**: Run `schema.sql` in the [Supabase SQL Editor](https://supabase.com/dashboard) for your project.
+2. **Configure connection**: Copy `config.properties.example` to `config.properties` (or use a `.env` file in the project root). Set:
+   - `database.url` — JDBC URL, e.g. `jdbc:postgresql://db.xxxxxxxx.supabase.co:5432/postgres`
+   - `database.username` — e.g. `postgres`
+   - `database.password` — your database password from Supabase Dashboard  
+   Do **not** commit `config.properties` or `.env` with real credentials.
+3. **Default login**: username `admin`, password `admin` (created by `schema.sql`). One seed teacher is also inserted.
 
 ## Future: Spring Boot Backend
 

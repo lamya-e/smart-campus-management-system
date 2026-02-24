@@ -21,7 +21,7 @@ public class MainController {
     private ToggleButton themeToggle;
 
     @FXML
-    public void initialize() {
+    public void initialize() throws IOException {
         showDashboard();
     }
 

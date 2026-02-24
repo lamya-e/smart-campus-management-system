@@ -33,7 +33,7 @@ public class MainApp extends Application {
                 MainApp.class.getResource("/view/LoginView.fxml")));
         Scene scene = new Scene(root, 420, 380);
         scene.getStylesheets().add(Objects.requireNonNull(
-                MainApp.class.getResource("/styles/app.css")).toExternalForm());
+                MainApp.class.getResource("/com/campus/css/app.css")).toExternalForm());
         primaryStage.setTitle("Smart Campus - Login");
         primaryStage.setScene(scene);
         primaryStage.setResizable(false);
@@ -48,7 +48,7 @@ public class MainApp extends Application {
                 MainApp.class.getResource("/view/MainView.fxml")));
         Scene scene = new Scene(root, 1200, 750);
         scene.getStylesheets().add(Objects.requireNonNull(
-                MainApp.class.getResource("/styles/app.css")).toExternalForm());
+                MainApp.class.getResource("/com/campus/css/app.css")).toExternalForm());
         primaryStage.setTitle("Smart Campus Management System");
         primaryStage.setScene(scene);
         primaryStage.setResizable(true);

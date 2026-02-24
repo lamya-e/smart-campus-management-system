@@ -1,0 +1,16 @@
+# Database config - do not commit credentials
+config.properties
+.env
+
+# Maven
+target/
+pom.xml.tag
+
+# IDE
+.idea/
+*.iml
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db
